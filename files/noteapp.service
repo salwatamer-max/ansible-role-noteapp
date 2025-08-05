@@ -1,0 +1,12 @@
+[Unit]
+Description=Note Taking App
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/noteapp/app.py
+WorkingDirectory=/opt/noteapp
+Restart=always
+User=ec2-user
+
+[Install]
+WantedBy=multi-user.target

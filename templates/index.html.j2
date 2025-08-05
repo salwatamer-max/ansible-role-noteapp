@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Note App</title></head>
+<body>
+  <form method="POST">
+    <textarea name="note"></textarea>
+    <button type="submit">Save Note</button>
+  </form>
+
+  <h3>Notes:</h3>
+  {% raw %}
+  {% for note in notes %}
+    <p>🕒 {{ note[1] }}<br>📌 {{ note[0] }}</p>
+    <hr>
+  {% endfor %}
+  {% endraw %}
+</body>
+</html>
+

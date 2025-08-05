@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  role_name: noteapp
+  author: your_github_username
+  description: Deploys a simple Flask-based note-taking app
+  license: MIT
+  min_ansible_version: 2.15
+
+  platforms:
+    - name: Amazon
+      versions:
+        - "2023"
+
+dependencies: []
+
+
