@@ -30,8 +30,6 @@ noteapp/
 │   └── main.yml
 🧪 Example Playbook
 yaml
-Copy
-Edit
 - name: Deploy note-taking app
   hosts: webservers
   become: true
@@ -48,10 +46,6 @@ Ports 80 open in your firewall/security group
 
 📥 Installation
 After importing this role on Ansible Galaxy:
-
-bash
-Copy
-Edit
 ansible-galaxy install salwatamer-max.noteapp
 🌐 Accessing the App
 After deployment, visit:
