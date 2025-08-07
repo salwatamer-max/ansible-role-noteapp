@@ -15,7 +15,7 @@ Listens on http://<server-ip>/ (port 80)
 🚀 Role Variables
 No default variables needed. You can customize paths if desired.
 
-📂 Directory Structure
+📂 Directory structure
 .
 └── ansible-project
     ├── ansible.cfg
@@ -45,6 +45,7 @@ No default variables needed. You can customize paths if desired.
         │   └── test.yml
         └── vars
             └── main.yml
+
 
 🧪 Example Playbook
 yaml
