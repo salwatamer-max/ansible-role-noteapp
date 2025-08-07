@@ -395,6 +395,26 @@ ansible-galaxy role import --token=$GALAXY_TOKEN salwatamer-max ansible-role-not
 
 ---
 
+## 📸 Application Screenshot
+
+Here's what the deployed note-taking application looks like:
+
+<div align="center">
+  <img width="80%" alt="NoteApp Interface - Flask Note-Taking Application" src="https://github.com/user-attachments/assets/22faa03b-c9e1-49a3-8230-3fa4c432e517" />
+  
+  *The note-taking application interface showing the text input area and previously submitted notes with timestamps*
+</div>
+
+### 🎨 Application Features Shown:
+
+- **Clean, Responsive Interface** - Simple and user-friendly design
+- **Note Input Form** - Large text area for writing notes
+- **Timestamp Display** - Each note shows when it was created
+- **Chronological Order** - Notes displayed with newest first
+- **Professional Styling** - Clean CSS with proper spacing and colors
+
+---
+
 ## 🔗 Links & Resources
 
 - **GitHub Repository**: [https://github.com/salwatamer-max/ansible-role-noteapp](https://github.com/salwatamer-max/ansible-role-noteapp)
@@ -499,9 +519,6 @@ This project is licensed under the MIT License.
 ---
 
 *🌟 If this project helped you, please give it a star on GitHub!*
-
-
-
 
 
 
