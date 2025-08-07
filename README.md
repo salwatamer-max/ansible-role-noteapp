@@ -103,7 +103,7 @@ You should see the Note Taking App UI.
 
 📷 Screenshots
 
-<img width="763" height="349" alt="image" src="https://github.com/user-attachments/assets/f95c5637-bad4-4237-bea0-b05503628e47" />
+
 
 
 
