@@ -103,8 +103,7 @@ You should see the Note Taking App UI.
 
 📷 Screenshots
 
-<img width="1920" height="1080" alt="Screenshot (104)" src="https://github.com/user-attachments/assets/2f538511-7e34-406b-b1b7-cd34d70a771e" />
-
+"C:\Users\salwa\Pictures\Screenshots\Screenshot (112).png"
 
 📥 Installation from Galaxy
 Once your role is published to Galaxy:
