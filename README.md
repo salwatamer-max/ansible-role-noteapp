@@ -16,45 +16,56 @@ This Ansible role deploys a simple Flask-based note-taking web application on a 
 
 ## 🏗️ Role Directory Structure
 
-```bash
 noteapp/
 ├── defaults/
 ├── files/
-│   ├── app.py
-│   └── noteapp.service
+│ ├── app.py
+│ └── noteapp.service
 ├── handlers/
 ├── meta/
-│   └── main.yml
+│ └── main.yml
 ├── tasks/
-│   └── main.yml
+│ └── main.yml
 ├── templates/
-│   └── index.html
+│ └── index.html
 ├── tests/
 └── vars/
-🔧 Requirements
-✅ Ansible 2.10+
 
-✅ Python 3.x
-
-✅ Systemd-based OS (Amazon Linux, RHEL, CentOS)
-
-✅ Port 80 open in EC2 security group
-
-⚙️ Variables
-No default variables are required. You can override:
-
-Variable	Default	Description
-noteapp_port	80	Port Flask app will run on
-noteapp_dir	/opt/noteapp	Directory for app and database
-
-🚀 Usage Example
-1. Create Dynamic Inventory File
-Make sure aws_ec2.yaml is in your project and working.
-
-2. Create the Playbook deploy.yml:
 yaml
 Copy
 Edit
+
+---
+
+## 🔧 Requirements
+
+- ✅ Ansible 2.10+
+- ✅ Python 3.x
+- ✅ Systemd-based OS (Amazon Linux, RHEL, CentOS)
+- ✅ Port 80 open in EC2 security group
+
+---
+
+## ⚙️ Variables
+
+No default variables are required. You can override:
+
+| Variable       | Default           | Description                        |
+|----------------|-------------------|------------------------------------|
+| `noteapp_port` | `80`              | Port Flask app will run on         |
+| `noteapp_dir`  | `/opt/noteapp`    | Directory for app and database     |
+
+---
+
+## 🚀 Usage Example
+
+### 1. Create Dynamic Inventory File
+
+Make sure `aws_ec2.yaml` is in your project and working.
+
+### 2. Create the Playbook `deploy.yml`:
+
+```yaml
 - name: Deploy note-taking app
   hosts: all
   become: true
@@ -112,4 +123,3 @@ Ansible Galaxy: salwatamer-max.noteapp
 yaml
 Copy
 Edit
-
