@@ -49,3 +49,46 @@ ansible-project/
 │   ├── meta/
 │   │   └── main.yml
 
+
+⚙️ Setup Steps
+1. ✅ Prepare Environment
+Launch two EC2 instances (Amazon Linux 2023):
+
+controller → where Ansible runs
+
+agent → where the Flask app is deployed
+
+SSH into controller:
+sudo dnf install -y python3
+pip3 install ansible
+ansible --version
+
+2. ✅ Create and Build Your Role
+
+mkdir ansible-project && cd ansible-project
+ansible-galaxy init noteapp
+Populate:
+
+tasks/main.yml
+
+files/app.py
+
+files/noteapp.service
+
+templates/index.html
+
+meta/main.yml
+
+3. ✅ Create the Deployment Playbook
+deploy.yml:
+
+yaml
+Copy
+Edit
+- name: Deploy Flask Note Taking App
+  hosts: all
+  become: true
+
+  roles:
+    - salwatamer-max.noteapp
+
