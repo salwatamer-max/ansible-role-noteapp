@@ -16,7 +16,7 @@ Listens on http://<server-ip>/ (port 80)
 No default variables needed. You can customize paths if desired.
 
 📂 Directory structure
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5466ace7-c166-44f6-ba63-465a2749da08" />
+<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/5466ace7-c166-44f6-ba63-465a2749da08" />
 
 .
 └── ansible-project
