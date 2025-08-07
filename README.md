@@ -19,17 +19,18 @@ This Ansible role deploys a simple Flask-based note-taking web application on a 
 noteapp/
 ├── defaults/
 ├── files/
-│ ├── app.py
-│ └── noteapp.service
+│   ├── app.py
+│   └── noteapp.service
 ├── handlers/
 ├── meta/
-│ └── main.yml
+│   └── main.yml
 ├── tasks/
-│ └── main.yml
+│   └── main.yml
 ├── templates/
-│ └── index.html
+│   └── index.html
 ├── tests/
 └── vars/
+
 
 yaml
 Copy
