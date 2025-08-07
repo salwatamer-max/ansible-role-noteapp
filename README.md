@@ -16,18 +16,36 @@ Listens on http://<server-ip>/ (port 80)
 No default variables needed. You can customize paths if desired.
 
 📂 Directory Structure
-css
-Copy
-Edit
-noteapp/
-├── tasks/
-│   └── main.yml
-├── files/
-│   ├── app.py
-│   ├── index.html
-│   └── noteapp.service
-├── meta/
-│   └── main.yml
+.
+└── ansible-project
+    ├── ansible.cfg
+    ├── ansible.pem
+    ├── aws_ec2.yaml
+    ├── deploy.yml
+    └── noteapp
+        ├── README.md
+        ├── defaults
+        │   └── main.yml
+        ├── files
+        │   ├── app.py
+        │   ├── index.html
+        │   └── noteapp.service
+        ├── handlers
+        │   └── main.yml
+        ├── meta
+        │   └── main.yml
+        ├── playbook.yml
+        ├── requirements.yml
+        ├── tasks
+        │   └── main.yml
+        ├── templates
+        │   └── index.html.j2
+        ├── tests
+        │   ├── inventory
+        │   └── test.yml
+        └── vars
+            └── main.yml
+
 🧪 Example Playbook
 yaml
 - name: Deploy note-taking app
