@@ -64,6 +64,12 @@ No default variables are required. You can override:
 
 Make sure `aws_ec2.yaml` is in your project and working.
 
+## 🚀 Usage Example
+
+### 1. Create Dynamic Inventory File
+
+Make sure `aws_ec2.yaml` is in your project and working.
+
 ### 2. Create the Playbook `deploy.yml`:
 
 ```yaml
@@ -77,50 +83,35 @@ bash
 Copy
 Edit
 ansible-playbook -i aws_ec2.yaml deploy.yml
-🌍 Access the App
-After deployment, open your browser and go to:
-
-cpp
+yaml
 Copy
 Edit
-http://<your_ec2_public_ip>
-🖼️ Screenshot
-Here’s what the NoteApp looks like:
 
-<img width="800" alt="NoteApp Screenshot" src="https://github.com/user-attachments/assets/22faa03b-c9e1-49a3-8230-3fa4c432e517" />
-📦 Install from Ansible Galaxy
-Once published, use:
+---
 
-bash
-Copy
-Edit
-ansible-galaxy install salwatamer-max.noteapp
-📜 Manual Steps Summary
-Create EC2 instances (1 controller, 1 agent)
+### ✅ With this fixed version:
 
-Initialize Ansible Galaxy role:
+```markdown
+## 🚀 Usage Example
 
-bash
-Copy
-Edit
-ansible-galaxy init noteapp
-Build role (tasks, files, templates, meta)
+### 1. Create Dynamic Inventory File
 
-Create inventory and playbook
+Make sure `aws_ec2.yaml` is in your project and working.
 
-Run with:
+### 2. Create the Playbook `deploy.yml`
+
+Create a file named `deploy.yml` and add the following content:
+
+```yaml
+- name: Deploy note-taking app
+  hosts: all
+  become: true
+  roles:
+    - salwatamer-max.noteapp
+3. Run the Playbook
+Use the following command to run the playbook:
 
 bash
 Copy
 Edit
 ansible-playbook -i aws_ec2.yaml deploy.yml
-👩‍💻 Author
-Salwa Tamer
-
-GitHub: @salwatamer-max
-
-Ansible Galaxy: salwatamer-max.noteapp
-
-yaml
-Copy
-Edit
