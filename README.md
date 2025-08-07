@@ -49,10 +49,10 @@ Run the playbook to check that its running
 ansible-playbook -i aws_ec2.yaml deploy.yml
 go to the browser http://<your-ec2-instance-public-ip>/  to see the app
 
-🧪 Example Playbook you will create it under the noteapp before running 
-yaml
+🧪 Example Playbook you will create it under the ansible-project directory before running 
+playbook.yaml
 - name: Deploy note-taking app
-  hosts: webservers
+  hosts: all
   become: true
   roles:
     - salwatamer-max.noteapp
@@ -73,9 +73,8 @@ ansible-galaxy install salwatamer-max.noteapp
 After deployment, visit:
 http://<your-server-ip>/
 You should see the Note Taking App UI.
-
-📝 License
-MIT
+screenshots:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c7919cb1-1ec0-44b6-9cbb-f8f78d3caa52" />
 
 🙋‍♂️ Author
 Salwa Tamer
