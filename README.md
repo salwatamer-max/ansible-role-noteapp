@@ -121,9 +121,6 @@ GitHub: salwatamer-max
 Ansible Galaxy: salwatamer-max.noteapp
 
 
-🤝 Contributing
-Pull requests and stars are welcome! For major changes, please open an issue first to discuss what you'd like to change.
-
 📷 Screenshots
 
 <img width="1920" height="1080" alt="Screenshot (112)" src="https://github.com/user-attachments/assets/22faa03b-c9e1-49a3-8230-3fa4c432e517" />
