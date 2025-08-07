@@ -1,90 +1,128 @@
-📦 Ansible Role: noteapp
-This Ansible role deploys a simple Flask-based note-taking web application on a target Linux host (Amazon Linux 2023 or similar). The app runs on port 80 and uses SQLite as the backend.
+# 📒 Ansible Role: noteapp
 
-📁 Features
-Installs required packages (Python, Flask, SQLite)
+An Ansible Galaxy role that deploys a simple Flask-based note-taking web application on Linux hosts (tested on Amazon Linux 2023). This role automates the installation, configuration, and management of a minimal note-taking app using Flask and SQLite.
 
-Deploys a basic Flask web app with app.py and index.html
+---
 
-Creates and initializes SQLite database
+## 🚀 Features
 
-Sets up a systemd service to run the app on boot
+- ✅ Installs required packages (Python 3, Flask, SQLite)
+- ✅ Deploys `app.py` and `index.html`
+- ✅ Initializes an SQLite database
+- ✅ Sets up a `systemd` service to auto-start the app
+- ✅ App listens on port **80**
+- ✅ Compatible with dynamic EC2 inventory
 
-Listens on http://<server-ip>/ (port 80)
+---
 
-🚀 Role Variables
-No default variables needed. You can customize paths if desired.
+## 🧾 Requirements
 
-📂 Directory structure
-<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/5466ace7-c166-44f6-ba63-465a2749da08" />
-Steps: 
-1- Step 1: Create an AWS EC2 Instances amazon linux one for the controller and other 
-for the noteapp 
-2- Connect to the controller machine ssh via vsc or terminal  
-1. Install prerequisites 
-on the controller machine
-sudo dnf install -y python3   
-pip3 install ansible 
-ansible –version 
+- Ansible 2.10+
+- Python 3 on target machines
+- Systemd-based Linux distro (Amazon Linux 2023, RHEL, CentOS, etc.)
+- Port 80 open in security group (for web access)
 
-  ✅ 2. Create Ansible Galaxy role
-ansible-galaxy init noteapp # under the ansible-project directory
-cd noteapp
-This gives you the standard Galaxy role structure.
-  ⚙️ Step-by-step: Populate each file
+---
 
-🔹 tasks/main.yml
+## 📦 Role Variables
 
-🔹 files/app.py
+No variables are required by default. You may optionally override:
 
- 🔹 Files/noteapp.service
-
-🔹 meta/main.yml (for Galaxy)
-
-🔹templates/index.html
-
-🔹If you have dynamic inventory aws_ec2.yaml under the ansible-project directory in order to run the ansibe role and test we must create the deploy.yml file under the ansible-project directory to connect the ansible role with my dynamic inventory file
+```yaml
+noteapp_app_dir: /opt/noteapp
+noteapp_port: 80
+🗂️ Directory Structure
 
 
-🧪 Playbook you will create it under the ansible-project directory before running 
-🔹playbook.yaml
-- name: Deploy note-taking app
+
+ansible-project/
+├── aws_ec2.yaml              # Dynamic inventory file (optional)
+├── deploy.yml                # Playbook to call the role
+├── noteapp/                  # Ansible Galaxy role directory
+│   ├── tasks/
+│   │   └── main.yml
+│   ├── files/
+│   │   ├── app.py
+│   │   └── noteapp.service
+│   ├── templates/
+│   │   └── index.html
+│   ├── meta/
+│   │   └── main.yml
+⚙️ Setup Steps
+1. ✅ Prepare Environment
+Launch two EC2 instances (Amazon Linux 2023):
+
+controller → where Ansible runs
+
+agent → where the Flask app is deployed
+
+SSH into controller:
+
+bash
+
+sudo dnf install -y python3
+pip3 install ansible
+ansible --version
+2. ✅ Create and Build Your Role
+
+mkdir ansible-project && cd ansible-project
+ansible-galaxy init noteapp
+Populate:
+
+tasks/main.yml
+
+files/app.py
+
+files/noteapp.service
+
+templates/index.html
+
+meta/main.yml
+
+3. ✅ Create the Deployment Playbook
+deploy.yml:
+
+
+- name: Deploy Flask Note Taking App
   hosts: all
   become: true
+
   roles:
     - salwatamer-max.noteapp
-      
-Run the playbook to check that its running 
+4. ✅ Run the Playbook
+If you're using EC2 dynamic inventory:
+
+
 ansible-playbook -i aws_ec2.yaml deploy.yml
-go to the browser http://<your-ec2-instance-public-ip>/  to see the app
-
-🧪 Playbook you will create it under the ansible-project directory before running 
-🔹playbook.yaml
-- name: Deploy note-taking app
-  hosts: all
-  become: true
-  roles:
-    - salwatamer-max.noteapp
- 
-🔧 Requirements
-Ansible 2.10+
-
-Python 3
-
-Systemd-based host (Amazon Linux, RHEL, CentOS, etc.)
-
-Ports 80 open in your firewall/security group
-
-📥 Installation
-After importing this role on Ansible Galaxy:
-ansible-galaxy install salwatamer-max.noteapp
 🌐 Accessing the App
-After deployment, visit:
-http://<your-server-ip>/
-You should see the Note Taking App UI.
-screenshots:
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c7919cb1-1ec0-44b6-9cbb-f8f78d3caa52" />
+Once deployed successfully, open a browser and navigate to:
 
-🙋‍♂️ Author
+
+http://<your-ec2-public-ip>/
+You should see the Note Taking App UI.
+
+📷 Screenshots
+
+
+📥 Installation from Galaxy
+Once your role is published to Galaxy:
+
+
+ansible-galaxy install salwatamer-max.noteapp
+Then include it in any playbook:
+
+yaml
+
+roles:
+  - salwatamer-max.noteapp
+👩‍💻 Author
 Salwa Tamer
+
 GitHub: salwatamer-max
+
+Ansible Galaxy: salwatamer-max.noteapp
+
+
+🤝 Contributing
+Pull requests and stars are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
