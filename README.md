@@ -43,14 +43,23 @@ This gives you the standard Galaxy role structure.
 
 🔹templates/index.html
 
-If you have dynamic inventory aws_ec2.yaml under the ansible-project directory in order to run the ansibe role and test we must create the deploy.yml file under the ansible-project directory to connect the ansible role with my dynamic inventory file
+🔹If you have dynamic inventory aws_ec2.yaml under the ansible-project directory in order to run the ansibe role and test we must create the deploy.yml file under the ansible-project directory to connect the ansible role with my dynamic inventory file
 
+
+🧪 Playbook you will create it under the ansible-project directory before running 
+🔹playbook.yaml
+- name: Deploy note-taking app
+  hosts: all
+  become: true
+  roles:
+    - salwatamer-max.noteapp
+      
 Run the playbook to check that its running 
 ansible-playbook -i aws_ec2.yaml deploy.yml
 go to the browser http://<your-ec2-instance-public-ip>/  to see the app
 
-🧪 Example Playbook you will create it under the ansible-project directory before running 
-playbook.yaml
+🧪 Playbook you will create it under the ansible-project directory before running 
+🔹playbook.yaml
 - name: Deploy note-taking app
   hosts: all
   become: true
