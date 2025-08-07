@@ -101,13 +101,6 @@ Once deployed successfully, open a browser and navigate to:
 http://<your-ec2-public-ip>/
 You should see the Note Taking App UI.
 
-📷 Screenshots
-
-<img width="1920" height="1080" alt="Screenshot (112)" src="https://github.com/user-attachments/assets/ee7b2b8a-c9f6-4909-a472-a1df83bc9e46" />
-
-
-
-
 
 📥 Installation from Galaxy
 Once your role is published to Galaxy:
@@ -130,4 +123,9 @@ Ansible Galaxy: salwatamer-max.noteapp
 
 🤝 Contributing
 Pull requests and stars are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
+📷 Screenshots
+
+<img width="1920" height="1080" alt="Screenshot (112)" src="https://github.com/user-attachments/assets/22faa03b-c9e1-49a3-8230-3fa4c432e517" />
+
 
